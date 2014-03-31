@@ -1,0 +1,222 @@
+\documentclass[12pt]{article}
+
+\usepackage{sbc-template}
+
+\usepackage{graphicx,url}
+
+\usepackage[brazil]{babel}   
+\usepackage[latin1]{inputenc} 
+\usepackage{csquotes}
+\usepackage[backend=biber]{biblatex}
+\usepackage{pgfgantt}
+\usepackage{pdflscape}
+
+
+ 
+
+\addbibresource{sbc-template.bib}
+
+      
+\sloppy
+
+\title{Plataforma de geolocalização e bloqueio remoto\\ para automóveis}
+
+\author{Leandro Maurício Araújo Bentes\inst{1}, Raimundo Corrêa de Oliveira\inst{1}}
+
+\address{Escola Superior de Tecnologia -- Universidade do Estado do Amazonas
+  (UEA)\\
+  Av. Darcy Vargas, 1200, Parque Dez -- 69.050-020 -- Manaus -- AM -- Brasil
+  \email{\{leandro.ma.bentes,rcorrea.oliveira\}@gmail.com}
+}
+
+\begin{document} 
+
+\maketitle
+
+\begin{abstract}
+  This article contains the proposed end of course work that will be presented 
+	to obtain the title of Bachelor of Computer Engineering at the University of 
+	the State of Amazonas. The work in question is a platform for vehicle tracking 
+	and lock that connects to a server on the Internet, sending the vehicle position
+	in real time for viewing in a maps API. Through web service, in addition
+	to visualization, you can send command to perform the lock operation of vehicle
+	by engine shutdown. The entire development process uses techniques of Embedded 
+	Systems Design based on UML and other diagrams necessary.
+\end{abstract}
+     
+\begin{resumo} 
+  Este artigo contém a proposta de Trabalho de Conclusão de Curso que será apresentado
+	para obtenção do título de Bacharel em Engenharia de Computação na Universidade do 
+	Estado do Amazonas. O trabalho em questão é uma plataforma de rastreamento e bloqueio 
+	veicular que se conecta ao um servidor na internet, enviando a posição do veículo em 
+	tempo real para visualização em um uma API de mapas. Por meio do serviço Web, 
+	além da visualização, será possível enviar comando para efetuar o bloqueio do 
+	funcionamento do veículo por meio do desligamento do motor. Todo o processo de 
+	desenvolvimento utilizará técnicas de Projeto de Sistemas Embarcados baseado em UML 
+	e demais diagramas necessários.
+\end{resumo}
+
+
+\section{Descrição do Problema}
+
+A quantidade de roubos e furtos de veículos no Brasil vem avançando de forma 
+significativa durante os últimos anos, aumentando proporcionalmente ao número 
+de automóveis em circulação. Segundo informações das secretarias estaduais de 
+segurança pública, Detran e Denatran, as cidades do Rio de Janeiro, São Paulo 
+e Salvador são as que ocupam, respectivamente, os três primeiros lugares em 
+número de roubos e furtos no país.
+
+Segundo a reportagem de \textcite{borges:2011}, em média, 150 carros são 
+roubados/furtados por dia no Rio de Janeiro, quatro por dia em São Paulo e 
+2,8 por dia em Salvador. Para a polícia, os grupos que comandam o esquema de
+roubo e furto articulam as ações de dentro de presídios e possuem ramificações
+em vários estados. A principal utilidade dos automóveis sinistrados é a transformação 
+em dublês (ou clones), passando por alterações no chassi, placas e outros dados para  
+venda ilegal em outros estados, é claro que parte destes serve para a prática 
+de crimes, como o transporte de quadrilhas durante assaltos e o transporte de drogas.
+
+Outro ponto que merece destaque é a área da logística, especialmente a entrega pontual 
+de produtos ao menor tempo possível. No Brasil, estes tempo pode ser maior devido a alguns
+agravantes, como as condições da malha rodoviária que geram a quebra de veículos e a alta 
+incidência de roubos de cargas nas rodovias. Diante deste cenário, é necessária uma solução que permita a geolocalização em tempo real contando com mecanismos de bloqueio que podem ser controlados remotamente.
+
+Atualmente o mercado oferece soluções similares à proposta, entretanto as que apresentam
+idoneidade e nome confiável são viáveis apenas para empresas, já que a aquisição
+do serviço requer um investimento inicial em equipamento e o pagamento de mensalidades para
+a manutenção do serviço, que em geral é integrado com um pacote de segurança patrimonial,
+excluindo automaticamente o cidadão comum que necessita de um serviço mais simples, contando
+com uma renda limitada. Esta proposta visa a criação de uma plataforma com projeto aberto,
+utilizando hardware open-source e software disponibilizado publicamente, estimulando pequenas empresas a implementar o dispositivo e outros componentes propostos na arquitetura, tudo isto a um preço mais acessível.
+   
+
+\section{Trabalho Relacionados} \label{sec:firstpage}
+
+Durante o levantamento bibliográfico realizado para obtenção de trabalhos correlatos,
+foram encontrados três projetos de relevância na categoria de alarme automotivo inteligente,
+alguns utilizando inclusive comunicação remota inter-dispositivos e hardware open-source.
+
+\textcite{ivan:2007} descreve um projeto de sistema de alarme automotivo 
+cuja principal funcionalidade é a detecção de um evento sonoro no interior do veículo 
+e, realizando as conversões necessárias, sinaliza a um micro controlador o ocorrido, 
+este por sua vez está programado para acionar um dispositivo que realiza uma chamada 
+telefônica ao aparelho celular do proprietário do veículo de modo a alertá-lo sobre 
+a anomalia, o objetivo geral é a detecção do choro de uma criança ou animal esquecido
+dentro do veículo. Em toda extensão do trabalho verificou-se uma abordagem bastante prática, com 
+experimentos e construção de circuitos, além da exibição do funcionamento do 
+protótipo, além disso, foi realizado um fundamental teórico bastante sucinto 
+que se focou principalmente nos tipos de microfone. O ponto negativo ficou 
+por conta da ausência de modelagem do problema, não existem diagramas UML ou 
+similares que representem as funcionalidades, projeto de classes e sequência, 
+que são essenciais para qualidade do projeto.
+
+Em sua monografia, \textcite{leandro:2010} propõe um sistema de segurança veicular para ser 
+integrado a um alarme já existente no veículo, este sistema objetiva além de avisar ao proprietário 
+via SMS/GPRS quando o alarme comum for acionado, detectar quando algum objeto, 
+criança ou animal de estimação for esquecido sobre o banco verificando a 
+presença do peso sobre este. O autor promove uma explanação sobre a motivação 
+do trabalho baseado em dados jornalísticos e casos verídicos de esquecimento
+de crianças pelos pais e quais as consequências biológicas trazidas a um indivíduo 
+se exposto às condições ambientais semelhantes a de um carro fechado exposto ao sol.
+O projeto se baseia na plataforma Arduino, utilizando a filisofia de hardware 
+livre, modularização de componentes e desenvolvimento simplificado de protótipos 
+para posterior produtização, o autor optou pela utilização de uma placa Arduino 
+Mega com módulo externo. Foram disponibilizados os passos realizados no projeto, um modelo esquemático de 
+testes além de anexar o código fonte aplicado na placa controladora todavia 
+há a ausência de esquemas de modelagem, principalmente baseados em UML, além 
+da falta do esquema eletrônico geral, o que facilitaria bastante a análise das
+limitações e aplicação de possíveis melhorias em projetos futuros.
+
+O trabalho de \textcite{alfonso:2006} se refere à criação 
+de um sistema de autenticação, onde o usuário recebe uma mensagem desafio em um 
+módulo portátil e a responde, para assim poder utilizar o veículo (funcionamento
+do motor e partes elétricas). Uma das funções deste dispositivo é o desligamento 
+do veículo caso a central não detecte que o módulo portátil nas proximidades do 
+veículo, se assemelhando às técnicas utilizadas nos alarmes veiculares mais modernos.
+Por modularizar os componentes e, estes se comunicarem utilizando radiofrequência,
+se fez necessária a utilização de criptografia para que as mensagens trocadas não 
+fossem interceptadas, interpretadas e posteriormente injetadas, em uma tentativa 
+de fraudar o sistema. Apesar de descrever textualmente de modo detalhado cada módulo desenvolvido,
+no decorrer o trabalho não traz modelagem de requisitos e de projeto baseada 
+em UML, apenas diagramas resultantes da fase de implementação, além disso, 
+uma interface mais amigável com o usuário seria muito bem vinda, neste ponto, 
+o desenvolvimento de trabalhos futuros substituindo o módulo portátil por um 
+smartphone seria promissor.
+
+
+
+\section{Objetivo}
+
+Implementar um protótipo da plataforma que inclui um módulo de hardware embarcado 
+no automóvel e a aplicação Web que permite seu monitoramento e comando.
+
+
+\section{Objetivos Específicos}
+\begin{itemize}
+	\item Gerar modelagem UML do sistema.
+	\item Criar módulo de hardware que será embarcado no veículo.
+	\item Desenvolver software para o módulo embarcado.
+	\item	Desenvolver web service responsável por coletar os dados do dispositivo
+	embarcado bem como transmitir comandos para este.
+	\item Elaborar módulo web de interface com o usuário, integrando os dados coletados a uma
+	API de mapas.	
+\end{itemize}
+
+
+
+\section{Metodologia}
+
+Neste trabalho será conduzida uma revisão bibliográfica relativa a projeto de sistemas
+embarcados a fim de aplicar padrões de projetos já consagrados e recomendados para a 
+categoria desta implementação, após esta fase de embasamento teórico, será realizada a 
+modelagem de requisitos utilizando modelo de casos de uso objetivando validar as funções
+do protótipo, a descrição dos casos de uso virá em seguida e derivará naturalmente para
+a construção do diagrama de classes.
+
+Em paralelo à isto, será elaborado um diagrama de componentes para uma melhor visão
+em alto nível do sistema, distiguindo módulo embarcado, módulo Web e módulo de interface 
+com o usuário (isto inicialmente, ao decorrer do projeto podem surgir mais módulos ou divisões
+dos existentes). Após total revisão da modelagem, iniciará a fase de definição de hardwares
+para o módulo embarcado, portanto será feito o estudo da documentação dos componentes,
+datasheets e analisadas recomendações em fóruns confiáveis. 
+
+Seguidas às definições do módulo embarcado, a estratégia de implementação do serviço Web
+e da interface com o usuário estarão em foco, com isso haverá a escolha do tipo de comunicação 
+entre os módulos, qual padrão de serviço será utilizado e os frameworks aplicados. 
+
+A integração dos componentes de hardware do módulo embarcado dará início à fase de 
+implementação, seguida do desenvolvimento do software que estará embutido neste componente.
+Para garantir a confiabilidade e conformidade, serão realizados testes de integração devidamente
+documentados, validando uma fase do projeto.
+
+Após o módulo embarcado, serão implementados os módulos Web: de serviço e de interface com o usuário.
+Utilizando a plataforma Java, será criada a estrutura que se comunicará diretamente com o módulo embarcado, realizando
+todos os fluxos de controle, comando e armazenamento transitório de dados, tudo isto oferecendo funcionalidades
+para a camada de interface com o usuário.
+A camada de interface com o usuário atenderá os princípios de usabilidade, é onde haverá a interação humana
+com o sistema, portanto deve prover o controle de acesso, perfis de usuário, validadação e verificação de campos.
+Nesta etapa surge a questão da escolha da API de mapas e sua integração com o projeto, a escolha deve se basear
+no estudo das documentações e relatos obtidos em fóruns e listas de discussão confiáveis, um dos fatores essenciais
+à escolha será a precisão do mapa em relação a coordenada passada como parâmetro, além do estado de atualização
+e mecanismos de manutenção.
+
+Finalizada a implementação dos módulos, a integração de todas as partes do sistema deve ser feita, juntamente com
+testes de integração e testes exploratórios verificando o comportamento real da aplicação. A parte
+embarcada será instalada em um automóvel real e um dos casos de teste a ser tratado é a realização de um percurso
+enquanto se é verificada a posição do veículo.
+
+\section{Cronograma}
+As atividades a serem realizadas no processo de desenvolvimento deste trabalho se encontram detalhadas
+abaixo. As atividade marcadas com o símbolo 'X' estão concluídas e as marcadas com o síbolo 'O' estão 
+pendentes.
+
+\begin{figure}[!htb]
+\centering
+\includegraphics{cronograma.png}
+\caption{Cronograma das atividades}
+\label{fig:cronograma}
+\end{figure}
+
+\printbibliography
+
+
+\end{document}

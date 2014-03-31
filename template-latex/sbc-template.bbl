@@ -1,0 +1,112 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist{entry}{nty}
+    \entry{borges:2011}{online}{}
+      \name{labelname}{1}{}{%
+        {{hash=f270cf61390ccfca69ded8d526dfef0e}{Borges}{B\bibinitperiod}{Rafhael}{R\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=f270cf61390ccfca69ded8d526dfef0e}{Borges}{B\bibinitperiod}{Rafhael}{R\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{f270cf61390ccfca69ded8d526dfef0e}
+      \strng{fullhash}{f270cf61390ccfca69ded8d526dfef0e}
+      \field{sortinit}{B}
+      \field{labeltitle}{Furtos e roubos de carros avan\c{c}am em grandes capitais do Brasil}
+      \field{month}{5}
+      \field{title}{Furtos e roubos de carros avan\c{c}am em grandes capitais do Brasil}
+      \field{urlday}{12}
+      \field{urlmonth}{02}
+      \field{urlyear}{2013}
+      \field{year}{2011}
+      \verb{url}
+      \verb http://noticias.uol.com.br/cotidiano/ultimas-noticias/2011/05/08/furtos-e-roubos-de-carros-avanca-em-grandes-capitais-do-brasil-e-assusta-moradores.htm
+      \endverb
+    \endentry
+    \entry{alfonso:2006}{thesis}{}
+      \name{labelname}{1}{}{%
+        {{hash=6ee4f708e6613a32874c73cbf900d384}{Marquez}{M\bibinitperiod}{Alfonso\bibnamedelima Diaz-Granados}{A\bibinitperiod\bibinitdelim D\bibinithyphendelim G\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=6ee4f708e6613a32874c73cbf900d384}{Marquez}{M\bibinitperiod}{Alfonso\bibnamedelima Diaz-Granados}{A\bibinitperiod\bibinitdelim D\bibinithyphendelim G\bibinitperiod}{}{}{}{}}%
+      }
+      \list{institution}{1}{%
+        {N\'ucleo de Ci\^encias Exatas e de Tecnologia, Centro Universit\'ario Positivo}%
+      }
+      \list{location}{1}{%
+        {Curitiba}%
+      }
+      \strng{namehash}{6ee4f708e6613a32874c73cbf900d384}
+      \strng{fullhash}{6ee4f708e6613a32874c73cbf900d384}
+      \field{sortinit}{M}
+      \field{labeltitle}{Sistema Antifurto de Ve\'iculos Automotivos}
+      \field{title}{Sistema Antifurto de Ve\'iculos Automotivos}
+      \field{type}{Gradua{\c c}\~ao}
+      \field{year}{2006}
+      \field{pages}{34}
+    \endentry
+    \entry{leandro:2010}{thesis}{}
+      \name{labelname}{1}{}{%
+        {{hash=08120961ff7471aa564d3360584ecefd}{Martins}{M\bibinitperiod}{Leandro\bibnamedelima Borges}{L\bibinitperiod\bibinitdelim B\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=08120961ff7471aa564d3360584ecefd}{Martins}{M\bibinitperiod}{Leandro\bibnamedelima Borges}{L\bibinitperiod\bibinitdelim B\bibinitperiod}{}{}{}{}}%
+      }
+      \list{institution}{1}{%
+        {Faculdade de Tecnologia e Ci\^encias Sociais Aplicadas, Centro Universit\'ario de Bras\'ilia}%
+      }
+      \list{location}{1}{%
+        {Bras\'ilia}%
+      }
+      \strng{namehash}{08120961ff7471aa564d3360584ecefd}
+      \strng{fullhash}{08120961ff7471aa564d3360584ecefd}
+      \field{sortinit}{M}
+      \field{labeltitle}{Sistema Antifurto Integrado ao Monitoramento de Presen{\c c}a de Crian{\c c}as no Interior de ve\'iculos usando GPRS}
+      \field{title}{Sistema Antifurto Integrado ao Monitoramento de Presen{\c c}a de Crian{\c c}as no Interior de ve\'iculos usando GPRS}
+      \field{type}{Gradua{\c c}\~ao}
+      \field{year}{2010}
+      \field{pages}{65}
+    \endentry
+    \entry{ivan:2007}{thesis}{}
+      \name{labelname}{1}{}{%
+        {{hash=f2504626f030403f2a4f8c86fa74b414}{Nascimento}{N\bibinitperiod}{Ivan\bibnamedelima Sampaio}{I\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
+      }
+      \name{author}{1}{}{%
+        {{hash=f2504626f030403f2a4f8c86fa74b414}{Nascimento}{N\bibinitperiod}{Ivan\bibnamedelima Sampaio}{I\bibinitperiod\bibinitdelim S\bibinitperiod}{}{}{}{}}%
+      }
+      \list{institution}{1}{%
+        {Faculdade de Ci\^encias Exatas e Tecnologia, Centro Universit\'ario de Bras\'ilia}%
+      }
+      \list{location}{1}{%
+        {Bras\'ilia}%
+      }
+      \strng{namehash}{f2504626f030403f2a4f8c86fa74b414}
+      \strng{fullhash}{f2504626f030403f2a4f8c86fa74b414}
+      \field{sortinit}{N}
+      \field{labeltitle}{Sistema de alarme automotivo que integra transdutor ac\'ustico/el\'etrico e celular}
+      \field{title}{Sistema de alarme automotivo que integra transdutor ac\'ustico/el\'etrico e celular}
+      \field{type}{Gradua{\c c}\~ao}
+      \field{year}{2007}
+      \field{pages}{54}
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+
